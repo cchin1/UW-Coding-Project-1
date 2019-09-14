@@ -1,13 +1,57 @@
-/* Onyx color */
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px)  ... 
 
-background {
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767px)  ... 
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px)  ... 
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199px)  ... 
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+.jumbotron jumbotron-fluid {
+ 
+    padding: 2rem 1rem;
+   
+    margin-bottom: 2rem;
+   
+    background-color: #e9ecef;
+   
+    border-radius: 0.3rem;
+   
+   
+   
+      background: #f0b7a1; /* Old browsers */
+   
+      background: -moz-linear-gradient(top, #f0b7a1 0%, #8c3310 14%, #bf6e4e 100%); /* FF3.6-15 */
+   
+      background: -webkit-linear-gradient(top, #f0b7a1 0%,#8c3310 14%,#bf6e4e 100%); /* Chrome10-25,Safari5.1-6 */
+   
+      background: linear-gradient(to bottom, #f0b7a1 0%,#8c3310 14%,#bf6e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 ); /* IE6-9 */ 
+   
+  }
+   
+  .hd1{
+   
+      color:#fff;
+   
+  }
+
+
+/* Onyx color */
+h1 {
     background-color: #353c3f;
 }
 
-
 /* Fawn color */
 h1 {
-        background-color: #e2ad6a;
+    background-color: #e2ad6a;
 }
 
 /* Pale Silver color */
