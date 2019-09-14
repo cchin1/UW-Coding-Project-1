@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -23,6 +23,12 @@
 
 <nav class="navbar navbar">
   
+<<<<<<< HEAD
+=======
+   
+
+      
+>>>>>>> df7946f4cc8307d6ee72b26288eb4db07607ef1e
 
 
 <div class="w3-content w3-display-container" >  <br>
@@ -88,7 +94,7 @@ function plusDivs(n) {
 }
  
 
-//EventBrite API Key: "C3Y4UW6PHVTZ3JPGDSWF" 
+
   var myArray = [];
   function cateFunction() {
       var categories = document.forms[1];
@@ -132,7 +138,7 @@ function plusDivs(n) {
     var myURL = "https://www.eventbriteapi.com/v3/events/search/?" + urlTerm + "&" + urlAddress + 
     "&" + categoriesList + "&location.within=25mi" + "&start_date.range_start=" + urlStartDate +
     "&start_date.range_end=" + urlEndDate +
-    "&token=C3Y4UW6PHVTZ3JPGDSWF";
+    "&token=IGGCIJMN5QSRKSJOHUYX";
     $.ajax({
     url: myURL,
     method: "GET"
@@ -143,7 +149,6 @@ function plusDivs(n) {
         var eventName = response.events[k].name.text;
         var eventStart = response.events[k].start.local;
         var eventURL = response.events[k].url;
-        //----------HTML output for event API results ------
         var eventSpace = $("<div>")
         eventSpace.addClass('panel panel-default');
         var eventURLActive = $("<a>");
@@ -190,18 +195,9 @@ function plusDivs(n) {
           
         }
       })
-        var clientID = 'NTU5MTQ4NHwxNTA1NTc5ODU4LjQ1'
-        var mySeatGeekURL = "https://api.seatgeek.com/2/events?postal_code="+ searchAddress + "&datetime_local.gte="+ searchStartDate +"&datetime_local.lt="+ searchEndDate +"&client_id="+ clientID + " "
-      
-         $.ajax({
-            url: mySeatGeekURL,
-            method: "GET"
-            })
-            .done(function(response){
-              $("#seatOut").append("<h1>SeatGeek Results: </h1>")
-              console.log(mySeatGeekURL);
+        
               
-              console.log(response);
+              //console.log(response);
               for (var k = 0; k < response.events.length; k++){
                 var seatName = response.events[k].short_title;
                 var seatURL = response.events[k].url;
@@ -225,7 +221,7 @@ function plusDivs(n) {
               }
               
             })
-  }) 
+ 
      
   </script>
 
