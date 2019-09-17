@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-  <head>
-=======
 <head>
   
->>>>>>> 2bf5e26196c69b4ea1d218bd125ab2604190e071
     <title>The Perfect Date</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +9,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -25,10 +21,7 @@
       <div class="container">
         <h1 class="display-3">The Perfect Date</h1>
       </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 2bf5e26196c69b4ea1d218bd125ab2604190e071
     </div>
 
     <nav class="navbar navbar">
@@ -68,282 +61,156 @@
               <div class="form-group">
                 <label for="end_date" id="endDateSearch">End Date</label>
                 <input type="date" id="end_date" class="form-control" />
-                <head>
-                  <title>The Perfect Date</title>
-                  <meta charset="utf-8" />
-                  <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                  />
-                  <link
-                    rel="stylesheet"
-                    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-                  />
-                  <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
-                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-                  <link
-                    rel="stylesheet"
-                    href="https://www.w3schools.com/w3css/4/w3.css"
-                  />
-                </head>
-
-                <body>
-                  <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                      <h1 class="display-3">The Perfect Date</h1>
-                    </div>
-                  </div>
-
-                  <nav class="navbar navbar">
-                    <div class="w3-content w3-display-container">
-                      <br />
-                      <div id="thePerfectDate">
-                        <div class="w3-content w3-display-container">
-                          <br />
-                          <div id="myCarousel"></div>
-                        </div>
-
-                        <br />
-                        <div class="container" id="userInput">
-                          <form>
-                            <div class="form-group">
-                              <label for="key-word" id="popSearch"
-                                >Popular Search</label
-                              >
-                              <input
-                                type="text"
-                                id="key-word"
-                                class="form-control"
-                                placeholder="Concerts, art, etc."
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="address" id="zipSearch"
-                                >Zip Code</label
-                              >
-                              <input
-                                type="text"
-                                id="address"
-                                class="form-control"
-                                placeholder="5 Digits"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="start_date" id="startDateSearch"
-                                >Start Date</label
-                              >
-                              <input
-                                type="date"
-                                id="start_date"
-                                class="form-control"
-                              />
-                            </div>
-                            <div class="form-group">
-                              <label for="end_date" id="endDateSearch"
-                                >End Date</label
-                              >
-                              <input
-                                type="date"
-                                id="end_date"
-                                class="form-control"
-                              />
-                            </div>
-                          </form>
-
-                          <form id="userCate"></form>
-                          <br />
-                          <button
-                            class="btn btn-primary"
-                            id="submit-me"
-                            type="button"
-                          >
-                            Submit
-                          </button>
-                        </div>
-
-                        <div class="container">
-                          <div class="row">
-                            <div id="weatherOut"></div>
-                          </div>
-
-                          <div class="row">
-                            <div id="eventOut" class="col-md-6"></div>
-                            <div id="seatOut" class="col-md-6"></div>
-                          </div>
-
-                          <script type="text/javascript">
-                            var slideIndex = 1;
-
-                            function plusDivs(n) {
-                              showDivs((slideIndex += n));
-                            }
-
-                            var myArray = [];
-                            function cateFunction() {
-                              var categories = document.forms[1];
-
-                              for (var i = 0; i < categories.length; i++) {
-                                if (categories[i].checked) {
-                                  myArray.push(categories[i].value);
-                                }
-                              }
-                            }
-
-                            $("#submit-me").on("click", function() {
-                              event.preventDefault();
-                              $("#weatherOut").empty();
-                              $("#eventOut").empty();
-
-                              myArray = [];
-                              cateFunction();
-                              var categoriesJoined = myArray.join();
-                              var categoriesList =
-                                "categories=" + categoriesJoined;
-                              var searchTerm = $("#key-word")
-                                .val()
-                                .trim();
-                              var urlTerm = "q=" + searchTerm;
-                              var searchAddress = $("#address")
-                                .val()
-                                .trim();
-                              var urlAddress =
-                                "location.address=" + searchAddress;
-                              var searchStartDate = $("#start_date")
-                                .val()
-                                .trim();
-                              var urlStartDate =
-                                searchStartDate + "T01%3A00%3A00";
-                              var searchEndDate = $("#end_date")
-                                .val()
-                                .trim();
-                              var urlEndDate = searchEndDate + "T01%3A00%3A00";
-                              if (
-                                searchAddress == null ||
-                                searchAddress == ""
-                              ) {
-                                $("#zipSearch").addClass("form-required");
-                                $("#zipSearch").append(
-                                  " Make sure you complete this field"
-                                );
-                              }
-                              if (
-                                searchStartDate == null ||
-                                searchStartDate == ""
-                              ) {
-                                $("#startDateSearch").addClass("form-required");
-                                $("#startDateSearch").append(
-                                  " Make sure you complete this field"
-                                );
-                              }
-                              if (
-                                searchEndDate == null ||
-                                searchEndDate == ""
-                              ) {
-                                $("#endDateSearch").addClass("form-required");
-                                $("#endDateSearch").append(
-                                  " Make sure you complete this field"
-                                );
-                              }
-                              var myURL =
-                                "https://www.eventbriteapi.com/v3/events/search/?" +
-                                urlTerm +
-                                "&" +
-                                urlAddress +
-                                "&" +
-                                categoriesList +
-                                "&location.within=25mi" +
-                                "&start_date.range_start=" +
-                                urlStartDate +
-                                "&start_date.range_end=" +
-                                urlEndDate +
-                                "&token=IGGCIJMN5QSRKSJOHUYX";
-                              console.log(myURL);
-                              $.ajax({
-                                url: myURL,
-                                method: "GET"
-                              }).done(function(response) {
-                                $("#eventOut").append(
-                                  "<h1>EventBrite Results: </h1>"
-                                );
-                                console.log(response);
-                                for (
-                                  var k = 0;
-                                  k < response.events.length;
-                                  k++
-                                ) {
-                                  //console.log(k)
-
-                                  var eventName = response.events[k].name.text;
-                                  var eventStart =
-                                    response.events[k].start.local;
-                                  var eventURL = response.events[k].url;
-                                  var eventSpace = $("<div>");
-                                  eventSpace.addClass("panel panel-default");
-                                  var eventURLActive = $("<a>");
-                                  eventURLActive.attr("href", eventURL);
-                                  eventURLActive.attr("target", "#");
-                                  eventURLActive.text("Check this event out!!");
-                                  var eventBtn = $("<div>");
-                                  eventBtn.addClass("well");
-                                  eventBtn.addClass("text-center");
-                                  eventBtn.append(eventURLActive);
-                                  eventSpace.html("<h1>" + eventName + "</h1>");
-                                  eventSpace.append(
-                                    "<h2>" + eventStart + "</h2>"
-                                  );
-                                  eventSpace.append(eventBtn);
-                                  $("#eventOut").append(eventSpace);
-                                }
-                              });
-                              var weatherAPIKey =
-                                "2bee70835b67699eaad26d5a938fcf32";
-                              var weatherAPIURL =
-                                "https://api.openweathermap.org/data/2.5/forecast/daily?zip=" +
-                                searchAddress +
-                                "&cnt=6" +
-                                "&appid=" +
-                                weatherAPIKey;
-                              $.ajax({
-                                url: weatherAPIURL,
-                                method: "GET"
-                              }).done(function(snap) {
-                                $("#weatherOut").append(
-                                  "<h1>6 Day Forecast for your location: </h1>"
-                                );
-                                for (var i = 0; i < snap.list.length; i++) {
-                                  var weatherStart = snap.list[i];
-                                  var temp = weatherStart.temp.day;
-                                  var convertTemp = Math.round(
-                                    1.8 * (temp - 273) + 32
-                                  );
-                                  var weatherIcon =
-                                    "https://openweathermap.org/img/w/" +
-                                    weatherStart.weather[0].icon +
-                                    ".png";
-
-                                  var weatherScreen = $("<div>");
-                                  weatherScreen.addClass("col-md-2");
-                                  weatherScreen.addClass("well");
-                                  var weatherPic = $("<img>");
-                                  weatherPic.addClass("img-responsive");
-                                  weatherPic.attr("src", weatherIcon);
-                                  weatherScreen.append(weatherPic);
-                                  weatherScreen.append(
-                                    "<h3>" + convertTemp + "&#8457;</h3>"
-                                  );
-                                  $("#weatherOut").append(weatherScreen);
-                                }
-                              });
-                            });
-                          </script>
-                        </div>
-                      </div>
-                    </div>
-                  </nav>
-                </body>
               </div>
             </form>
+
+            <form id="userCate"></form>
+            <br />
+            <button class="btn btn-primary" id="submit-me" type="button">
+              Submit
+            </button>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div id="weatherOut"></div>
+            </div>
+
+            <div class="row">
+              <div id="eventOut" class="col-md-6"></div>
+              <div id="seatOut" class="col-md-6"></div>
+            </div>
+
+            <script type="text/javascript">
+              var slideIndex = 1;
+              function plusDivs(n) {
+                showDivs((slideIndex += n));
+              }
+              var myArray = [];
+              function cateFunction() {
+                var categories = document.forms[1];
+                for (var i = 0; i < categories.length; i++) {
+                  if (categories[i].checked) {
+                    myArray.push(categories[i].value);
+                  }
+                }
+              }
+              $("#submit-me").on("click", function() {
+                event.preventDefault();
+                $("#weatherOut").empty();
+                $("#eventOut").empty();
+                myArray = [];
+                cateFunction();
+                var categoriesJoined = myArray.join();
+                var categoriesList = "categories=" + categoriesJoined;
+                var searchTerm = $("#key-word")
+                  .val()
+                  .trim();
+                var urlTerm = "q=" + searchTerm;
+                var searchAddress = $("#address")
+                  .val()
+                  .trim();
+                var urlAddress = "location.address=" + searchAddress;
+                var searchStartDate = $("#start_date")
+                  .val()
+                  .trim();
+                var urlStartDate = searchStartDate + "T01%3A00%3A00";
+                var searchEndDate = $("#end_date")
+                  .val()
+                  .trim();
+                var urlEndDate = searchEndDate + "T01%3A00%3A00";
+                if (searchAddress == null || searchAddress == "") {
+                  $("#zipSearch").addClass("form-required");
+                  $("#zipSearch").append(" Make sure you complete this field");
+                }
+                if (searchStartDate == null || searchStartDate == "") {
+                  $("#startDateSearch").addClass("form-required");
+                  $("#startDateSearch").append(
+                    " Make sure you complete this field"
+                  );
+                }
+                if (searchEndDate == null || searchEndDate == "") {
+                  $("#endDateSearch").addClass("form-required");
+                  $("#endDateSearch").append(
+                    " Make sure you complete this field"
+                  );
+                }
+                var myURL =
+                  "https://www.eventbriteapi.com/v3/events/search/?" +
+                  urlTerm +
+                  "&" +
+                  urlAddress +
+                  "&" +
+                  categoriesList +
+                  "&location.within=25mi" +
+                  "&start_date.range_start=" +
+                  urlStartDate +
+                  "&start_date.range_end=" +
+                  urlEndDate +
+                  "&token=IGGCIJMN5QSRKSJOHUYX";
+                console.log(myURL);
+                $.ajax({
+                  url: myURL,
+                  method: "GET"
+                }).done(function(response) {
+                  $("#eventOut").append("<h1>EventBrite Results: </h1>");
+                  console.log(response);
+                  for (var k = 0; k < response.events.length; k++) {
+                    //console.log(k)
+                    var eventName = response.events[k].name.text;
+                    var eventStart = response.events[k].start.local;
+                    var eventURL = response.events[k].url;
+                    var eventSpace = $("<div>");
+                    eventSpace.addClass("panel panel-default");
+                    var eventURLActive = $("<a>");
+                    eventURLActive.attr("href", eventURL);
+                    eventURLActive.attr("target", "#");
+                    eventURLActive.text("Check this event out!!");
+                    var eventBtn = $("<div>");
+                    eventBtn.addClass("well");
+                    eventBtn.addClass("text-center");
+                    eventBtn.append(eventURLActive);
+                    eventSpace.html("<h1>" + eventName + "</h1>");
+                    eventSpace.append("<h2>" + eventStart + "</h2>");
+                    eventSpace.append(eventBtn);
+                    $("#eventOut").append(eventSpace);
+                  }
+                });
+                var weatherAPIKey = "2bee70835b67699eaad26d5a938fcf32";
+                var weatherAPIURL =
+                  "https://api.openweathermap.org/data/2.5/forecast/daily?zip=" +
+                  searchAddress +
+                  "&cnt=6" +
+                  "&appid=" +
+                  weatherAPIKey;
+                $.ajax({
+                  url: weatherAPIURL,
+                  method: "GET"
+                }).done(function(snap) {
+                  $("#weatherOut").append(
+                    "<h1>6 Day Forecast for your location: </h1>"
+                  );
+                  for (var i = 0; i < snap.list.length; i++) {
+                    var weatherStart = snap.list[i];
+                    var temp = weatherStart.temp.day;
+                    var convertTemp = Math.round(1.8 * (temp - 273) + 32);
+                    var weatherIcon =
+                      "https://openweathermap.org/img/w/" +
+                      weatherStart.weather[0].icon +
+                      ".png";
+                    var weatherScreen = $("<div>");
+                    weatherScreen.addClass("col-md-2");
+                    weatherScreen.addClass("well");
+                    var weatherPic = $("<img>");
+                    weatherPic.addClass("img-responsive");
+                    weatherPic.attr("src", weatherIcon);
+                    weatherScreen.append(weatherPic);
+                    weatherScreen.append("<h3>" + convertTemp + "&#8457;</h3>");
+                    $("#weatherOut").append(weatherScreen);
+                  }
+                });
+              });
+            </script>
           </div>
         </div>
       </div>
