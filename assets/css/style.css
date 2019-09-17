@@ -3,6 +3,7 @@ body {
     background: url(https://i.pinimg.com/originals/9f/87/90/9f8790562aeec07708b82649bd4344fb.jpg);
 	background-size: 100%;
     background-repeat: no-repeat;
+    fill-opacity: (70%);
 }
 
 .jumbotron {
@@ -11,7 +12,9 @@ body {
 
 
 label {
-background-color: whitesmoke;
+background-color: inherit;
+color: black;
+
 }
 
 h1.display-3 {
