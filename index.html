@@ -23,13 +23,8 @@
 
 <nav class="navbar navbar">
   
-   
-
-      
-
-
-<div class="w3-content w3-display-container" >  <br>
-  <div id="myCarousel">
+    <div class="w3-content w3-display-container" >  <br>
+    <div id="thePerfectDate">
   
   
     
@@ -136,23 +131,26 @@ function plusDivs(n) {
     "&" + categoriesList + "&location.within=25mi" + "&start_date.range_start=" + urlStartDate +
     "&start_date.range_end=" + urlEndDate +
     "&token=IGGCIJMN5QSRKSJOHUYX";
+    console.log(myURL)
     $.ajax({
     url: myURL,
     method: "GET"
     })
     .done(function(response){
       $("#eventOut").append("<h1>EventBrite Results: </h1>");
-      for(var k = 0; k < 10; k++){
+      console.log(response)
+      for(var k = 0; k < response.events.length; k++){
+        //console.log(k)
+        
         var eventName = response.events[k].name.text;
         var eventStart = response.events[k].start.local;
         var eventURL = response.events[k].url;
-        var eventSpace = $("<div>")
+        var eventSpace = $("<div>");
         eventSpace.addClass('panel panel-default');
         var eventURLActive = $("<a>");
         eventURLActive.attr("href", eventURL);
         eventURLActive.attr("target", "#");
         eventURLActive.text("Check this event out!!");
-     
         var eventBtn = $("<div>");
         eventBtn.addClass("well");
         eventBtn.addClass("text-center");
@@ -166,7 +164,7 @@ function plusDivs(n) {
       
     }) 
       var weatherAPIKey = "2bee70835b67699eaad26d5a938fcf32";
-      var weatherAPIURL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + searchAddress + "&cnt=6" 
+      var weatherAPIURL = "https://api.openweathermap.org/data/2.5/forecast/daily?zip=" + searchAddress + "&cnt=6" 
         + "&appid=" + weatherAPIKey;
       $.ajax({
         url: weatherAPIURL,
@@ -178,7 +176,7 @@ function plusDivs(n) {
           var weatherStart = snap.list[i];
           var temp = weatherStart.temp.day;
           var convertTemp = Math.round( (1.8 * (temp - 273)) + 32);
-          var weatherIcon = "http://openweathermap.org/img/w/" + weatherStart.weather[0].icon + ".png";
+          var weatherIcon = "https://openweathermap.org/img/w/" + weatherStart.weather[0].icon + ".png";
           
           var weatherScreen = $("<div>");
           weatherScreen.addClass("col-md-2");
@@ -194,30 +192,12 @@ function plusDivs(n) {
       })
         
               
-              //console.log(response);
-              for (var k = 0; k < response.events.length; k++){
-                var seatName = response.events[k].short_title;
-                var seatURL = response.events[k].url;
-                var seatStart = response.events[k].datetime_local;
-                 
-                    var seatSpace = $("<div>")
-                    seatSpace.addClass('panel panel-default');
-                    var seatURLActive = $("<a>");
-                    seatURLActive.attr("href", seatURL);
-                    seatURLActive.attr("target", "#");
-                    seatURLActive.text("Sounds Awesome, Let Me See The Page!");
-                    var seatBtn = $("<div>");
-                    seatBtn.addClass("well");
-                    seatBtn.addClass("text-center");
-                    seatBtn.append(seatURLActive);
-                    seatSpace.html("<h1>" + seatName + "</h1>");
-                    seatSpace.append("<h2>" + seatStart + "</h2>");
-                    seatSpace.append(seatBtn);
-                    $("#seatOut").append(seatSpace);
-                  
-              }
+             
               
-            })
+                  
+              
+              
+    })
  
      
   </script>
