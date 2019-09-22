@@ -5,6 +5,9 @@ Aaron Bryant
 Candice Chin
 Mario Lopez
 
+## Link
+https://cchin1.github.io/UW-Coding-Project-1/
+
 ## Technologies Used
 HTML, Javascript, jQuery, EventBrite and OpenWeather APIs, AJAX calls
 
